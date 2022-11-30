@@ -23,7 +23,9 @@ const GroceryApp = (props) => {
 
   const onVote = (dir, action, index) => {
     // Update the products array accordingly ...
-    if (action !== 'add' && dir.votes === 0) return
+
+     // if you dont want votes to go below zero
+    // if (action !== 'add' && dir.votes === 0) return
     
     const newList = products.filter((p) => p.name !== dir.name)
     const UpdatedItem = {...dir, votes: action === 'add' ? dir.votes + 1 : dir.votes - 1 }
